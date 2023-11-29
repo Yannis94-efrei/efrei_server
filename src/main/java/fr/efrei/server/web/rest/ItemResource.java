@@ -1,6 +1,7 @@
-package fr.efrei.server.web;
+package fr.efrei.server.web.rest;
 
 import fr.efrei.server.domain.Item;
+import fr.efrei.server.service.ItemService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,11 +14,15 @@ import java.util.List;
 @RequestMapping("/api")
 public class ItemResource {
 
-    //public final ItemService itemService;
+    public final ItemService itemService;
 
-    //public ItemResource(ItemService itemService) { this.itemService = itemService; }
+    public ItemResource(ItemService itemService) {
+        this.itemService = itemService;
+    }
+
+    @GetMapping("/items")
     public List<Item> getAllItem() {
-        return new ArrayList<>();
+        return itemService.findAll();
     }
 
     @GetMapping("/items/{id}")

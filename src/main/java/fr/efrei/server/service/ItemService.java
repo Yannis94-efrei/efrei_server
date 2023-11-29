@@ -15,12 +15,12 @@ import java.util.List;
 public class ItemService {
 
     public final ItemRepository itemRepository;
-    @Autowired
+
     public ItemService(ItemRepository itemRepository) {
         this.itemRepository = itemRepository;
     }
 
     public List<Item> findAll() {
-        return new ArrayList<>();
+        return itemRepository.findAll();
     }
 }
