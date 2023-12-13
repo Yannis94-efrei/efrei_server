@@ -16,6 +16,7 @@ public class ItemService {
 
     public final ItemRepository itemRepository;
 
+    @Autowired
     public ItemService(ItemRepository itemRepository) {
         this.itemRepository = itemRepository;
     }
