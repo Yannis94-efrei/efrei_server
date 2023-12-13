@@ -7,11 +7,19 @@
 
 name: Java CI with Gradle
 
+<<<<<<< HEAD
 on:
   push:
     #branches: [ "main" ]
   pull_request:
     #branches: [ "main" ]
+=======
+  #on:
+  #push:
+  #branches: [ "main" ]
+  #pull_request:
+#branches: [ "main" ]
+>>>>>>> ae1689d9fcb8cc53805987097cb372cb1df67288
 
 permissions:
   contents: read
