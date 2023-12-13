@@ -1,9 +1,11 @@
 package fr.efrei.server.domain;
+import jakarta.persistence.*;
 
-import jakarta.persistence.Id;
-
+@Entity
 public class Item {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
+    @SequenceGenerator(name = "sequenceGenerator")
     private Integer id;
     private String name;
     private Double price;

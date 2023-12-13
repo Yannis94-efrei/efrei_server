@@ -21,6 +21,6 @@ public class ItemService {
     }
 
     public List<Item> findAll() {
-        return new ArrayList<>();
+        return itemRepository.findAll();
     }
 }
