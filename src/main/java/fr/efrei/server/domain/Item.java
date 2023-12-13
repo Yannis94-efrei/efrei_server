@@ -1,11 +1,13 @@
 package fr.efrei.server.domain;
 import jakarta.persistence.*;
-
+@SequenceGenerator(
+        name = "sequenceGenerator",
+        sequenceName = "SEQUENCE_ITEM",
+        allocationSize = 1)
 @Entity
 public class Item {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
-    @SequenceGenerator(name = "sequenceGenerator")
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "sequenceGenerator")
     private Integer id;
     private String name;
     private Double price;
