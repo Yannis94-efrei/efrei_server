@@ -24,10 +24,15 @@ public class ItemService {
         return itemRepository.findAll();
     }
 
+    public Item findWithId(Integer id){
+        return itemRepository.findById(id).orElse(null);
+    }
+
     public Item create(Item item) {
         Item NewItem = new Item();
         NewItem.setName(item.getName());
         NewItem.setPrice(item.getPrice());
+        NewItem.setId(itemRepository.findAll().size() + 1);
         return itemRepository.save(NewItem);
     }
 

@@ -22,6 +22,10 @@ public class ItemResource {
         return itemService.findAll();
     }
 
+    public Item getItem(@PathVariable Integer id){
+        return itemService.findWithId(id);
+    }
+
     @PostMapping("/items")
     public Item createItem(@RequestBody Item item){
         return itemService.create(item);
